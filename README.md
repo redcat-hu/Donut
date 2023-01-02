@@ -1,2 +1,2 @@
-# Donut
+# Donut Paradise
 Donut Paradise
