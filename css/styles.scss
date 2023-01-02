@@ -3,12 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 //Változók
-$m_color: rgb(255, 153, 224);
+$m_color: rgb(255, 118, 182);
+$m2_color: rgb(253, 69, 146);
+$bg_color: white;
+$text_color: rgb(24, 24, 24);
 
 $mobil: 600px;
 $pc: 800px;
 
-$max-szel: 1000px;
+$max-szel: 800px;
 
 
 // Alap
@@ -18,9 +21,10 @@ $max-szel: 1000px;
     padding: 0;
 }
 html {
-    font-size: 10px;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     background-color: $m_color;
+    text-align: center;
 }
 
 // Sablon
@@ -28,17 +32,103 @@ html {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
+    gap: 2rem;
+    margin: 0 auto;
 }
 .flex {
     display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: $max-szel;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: $m2_color;
+}
+a:hover {
+    color: $m_color;
+}
+li {
+    list-style: none;
+}
+.box {
+    min-height: 50vh;
 }
 
 //
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $bg_color;
+    padding: .8rem 1.2rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+
+    .flex {
+        justify-content:space-between;
+        align-items: center;
+    }
+    .logo {
+        font-weight: bold;
+    }
+    .pc_menu {
+        display: none;
+    }
+    .mobil_menu {
+        display: block;
+        padding: .5rem;
+        border: 2px solid $m_color;
+    }
+}
+main {
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+footer {
+    color: $text_color;
+    background-color: $m2_color;
+
+    .flex {
+        justify-content: center;
+    }
+    a {
+        color: white;
+    }
+    a:hover {
+        color: rgba(255, 255, 255, 0.801);
+    }
+    .up {
+        flex-direction: column;
+        padding: 3rem;
+        .creator {
+            grid-column: 1/-1;
+            grid-row: 1;
+            font-size: 1.5rem;
+        }
+    }
+    .down {
+        padding: 2rem;
+        background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
+        color: $m_color;
+        font-weight: bold;
+    }
+}
 
 
 // Media
 @media only screen and (min-width: $pc) {
     html {
       background-color: rgb(218, 80, 195);
+    }
+    footer {
+        .flex {
+            flex-direction: row;
+            justify-content:space-around
+        }
     }
   }
