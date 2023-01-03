@@ -46,8 +46,35 @@
         <div id="rolunk" class="box">
             <h2>Rólunk</h2>
         </div>
-        <div id="kapcsolat" class="box">
-            <h2>Kapcsolat</h2>
+        <div id="kapcsolat" class="box flex">
+            <div class="sendmail flex">
+                <i class="bi bi-envelope-open-fill"></i>
+                <h2>Írj nekünk!</h2>
+                <form class="flex" name="form" onsubmit="return kuldES(this)">
+                    <label action="/action_page.php" for="nev">Név</label>
+                        <input type="text" id="nev" name="nev" placeholder="A neved..." required>
+
+                    <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Az email címed..." required>
+
+                    <label for="szoveg">Szöveg</label>
+                        <input type="text" id="szoveg" name="szoveg" placeholder="Írj valamit..." required>
+                    <input type="submit" value="Küldés">
+                </form>
+            </div>
+            <div class="elerhetoseg">
+                <h2>Kapcsolat</h2>
+                <ul>
+                    <li><i class="bi bi-telephone-fill"></i> +36-20-580-2061</li>
+                    <li><i class="bi bi-geo-alt-fill"></i> Szentendre, Kucsera Ferenc utca 4.</li>
+                    <li><a target="_blank" href="https://id.red-cat.hu/nn/"><i class="bi bi-person-vcard-fill"></i> Digitális Névjegykártya</a></li>
+                </ul>
+                <div class="social">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
         </div>
     </main>
 

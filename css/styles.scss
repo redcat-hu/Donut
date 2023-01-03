@@ -5,16 +5,16 @@
 //Változók
 $m_color: rgb(255, 118, 182);
 $m2_color: rgb(253, 69, 146);
-$m3_color: rgb(253, 69, 146);
 $bg_color: white;
 $text_color: rgb(24, 24, 24);
+$shadow_1: .5rem .5rem 1rem rgba(253, 69, 146, 0.171);
 $text_shadow_1: 0px 2px 5px rgba(54, 8, 30, 0.781);
 
 $mobil: 600px;
 $pc: 800px;
 
 $max-szel: 1500px;
-$min-szel:350px;
+$min-szel:300px;
 
 
 // Alap
@@ -29,6 +29,9 @@ html {
     background-image: linear-gradient(to left, white, $m_color, white);
     text-align: center;
     scroll-behavior: smooth;
+}
+body {
+    min-height: $min-szel;
 }
 
 // Sablon
@@ -149,6 +152,49 @@ main {
     }
     #kapcsolat {
         background-image: linear-gradient($m_color, $m2_color);
+        background-image: url(../img/fank1.webp);
+        padding: 2rem;
+        margin: 0;
+        justify-content: space-around;
+        background-position: center;
+        background-size: cover;
+        
+        .sendmail, .elerhetoseg {
+            margin: 0;
+            flex-direction: column;
+            background-color: $bg_color;
+            color: $m2_color;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: $shadow_1;
+        }
+        .sendmail {
+            i {
+                font-size: 4rem;
+            }
+            form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            label {
+                font-size: 1.3rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            input {
+                border-radius: .5rem;
+                padding: 1rem;
+                border-color: whitesmoke;
+            }
+            input:last-child {
+                background-color: $m2_color;
+                color: $bg_color;
+                font-size: 1.4rem;
+                padding: 1rem;
+                border: 0;
+                border-radius: 2rem;
+            }
+        }
     }
 }
 footer {
