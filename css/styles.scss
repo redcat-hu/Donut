@@ -5,13 +5,16 @@
 //Változók
 $m_color: rgb(255, 118, 182);
 $m2_color: rgb(253, 69, 146);
+$m3_color: rgb(253, 69, 146);
 $bg_color: white;
 $text_color: rgb(24, 24, 24);
+$text_shadow_1: 0px 2px 5px rgba(54, 8, 30, 0.781);
 
 $mobil: 600px;
 $pc: 800px;
 
-$max-szel: 1200px;
+$max-szel: 1500px;
+$min-szel:350px;
 
 
 // Alap
@@ -23,8 +26,9 @@ $max-szel: 1200px;
 html {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient($m_color, $m2_color);
+    background-image: linear-gradient(to left, white, $m_color, white);
     text-align: center;
+    scroll-behavior: smooth;
 }
 
 // Sablon
@@ -64,12 +68,14 @@ li {
 
 header {
     position: fixed;
+    z-index: 50;
     top: 0;
     width: 100%;
     background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
-    padding: .5rem 1.2rem;
+    padding: .5rem 2rem;
     text-transform: uppercase;
     font-size: 1.3rem;
+    min-width: $min-szel;
 
     .flex {
         justify-content:space-between;
@@ -97,8 +103,52 @@ main {
     min-height: 70vh;
 
     #fooldal {
-        min-height: 90vh;
+        margin-top: 60px;
+        position: relative;
+        height: clamp(500px, 90vh, 1000px);
         background-color: rgb(2, 137, 255);
+        background-image: url(../img/nyitokep1.jpg);
+        background-position: center;
+        background-size: cover;
+
+        .szoveg {
+            background-image: linear-gradient(rgba(255, 255, 255, 0), $bg_color);
+            color: $text_color;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            padding: 3rem 5rem;
+            z-index: 5;
+            text-transform: uppercase;
+            text-align: left;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+        video {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #fankok {
+        background-color: $bg_color;
+    }
+    #rolunk {
+        background-image: linear-gradient($bg_color, rgba(255, 255, 255, 0.479)), url(../img/belter1.webp);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #kapcsolat {
+        background-image: linear-gradient($m_color, $m2_color);
     }
 }
 footer {
@@ -116,7 +166,7 @@ footer {
         color: rgba(255, 255, 255, 0.801);
     }
     .up {
-        padding: 3rem;
+        padding: 5rem 3rem;
         color: white;
         .flex {
             flex-direction: column;
@@ -149,7 +199,7 @@ footer {
 }
 
 
-// Media
+// Media //////////////////////////////////
 @media only screen and (min-width: $pc) {
     html {
       background-color: rgb(218, 80, 195);
@@ -161,6 +211,13 @@ footer {
         }
         .pc_menu {
             display: block;
+        }
+    }
+    main {
+        #fooldal {
+            video {
+                display: block;
+            }
         }
     }
     footer .up .flex {
