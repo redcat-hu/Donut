@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donut Paradise</title>
+    <title>DONUT PARADISE</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./img_favicon/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="./img_favicon/favicon.ico">
@@ -18,10 +18,11 @@
             </div>
             <div class="mobil_menu">Menu</div>
             <nav class="pc_menu">
-                <ul>
-                    <li>Főoldal</li>
-                    <li>Rólam</li>
-                    <li>Kapcsolat</li>
+                <ul class="flex">
+                    <li><a href="#fooldal">Főoldal</a></li>
+                    <li><a href="#fankok">Fánkok</a></li>
+                    <li><a href="#rolunk">Rólunk</a></li>
+                    <li><a href="#kapcsolat">Kapcsolat</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,13 +30,16 @@
 
 <!-- main -->
     <main>
-        <div class="box">
+        <div id="fooldal" class="box">
             <h1>Donut Paradise</h1>
         </div>
-        <div class="box">
+        <div id="fankok" class="box">
+            <h2>Fánkok</h2>
+        </div>
+        <div id="rolunk" class="box">
             <h2>Rólunk</h2>
         </div>
-        <div class="box">
+        <div id="kapcsolat" class="box">
             <h2>Kapcsolat</h2>
         </div>
     </main>
@@ -45,21 +49,34 @@
         <div class="up">
             <div class="flex">
                 <div class="creator">
-                    <a href="#" target="_blank">designed by <br> REDCAT</a>
+                    <a href="https://red-cat.hu" target="_blank">designed by <br>
+                        <img src="https://red-cat.hu/img/logo.webp" alt="">
+                    </a>
                 </div>
-                <div class="menu">
+                <div class="nyitvatartas">
+                    <div class="cim">
+                        <i class="bi bi-clock-fill"></i> Nyitvatartás
+                    </div>
                     <ul>
-                        <li>Főoldal</li>
-                        <li>Termékeink</li>
-                        <li>Rólunk</li>
-                        <li>Kapcsolat</li>
+                        <li>H-P: 10:00 - 20:00</li>
+                        <li>SZ: 10:00 - 22:00</li>
+                        <li>V: 12:00 - 18:30</li>
                     </ul>
                 </div>
                 <div class="kapcsolat">
-                    Kapcsolat
+                    <div class="cim">
+                        Elérhetőségeink
+                    </div>
                     <ul>
-                        <li></li>
+                        <li><i class="bi bi-telephone-fill"></i> +36-20-580-2061</li>
+                        <li><i class="bi bi-geo-alt-fill"></i> Szentendre, Kucsera Ferenc utca 4.</li>
+                        <li><a target="_blank" href="https://id.red-cat.hu/nn/"><i class="bi bi-person-vcard-fill"></i> Digitális Névjegykártya</a></li>
                     </ul>
+                    <div class="social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

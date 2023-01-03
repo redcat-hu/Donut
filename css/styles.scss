@@ -11,7 +11,7 @@ $text_color: rgb(24, 24, 24);
 $mobil: 600px;
 $pc: 800px;
 
-$max-szel: 1000px;
+$max-szel: 1200px;
 
 
 // Alap
@@ -23,7 +23,7 @@ $max-szel: 1000px;
 html {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    background-color: $m_color;
+    background-image: linear-gradient($m_color, $m2_color);
     text-align: center;
 }
 
@@ -55,6 +55,9 @@ li {
 }
 .box {
     min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 //
@@ -64,13 +67,15 @@ header {
     top: 0;
     width: 100%;
     background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
-    padding: .8rem 1rem;
+    padding: .5rem 1.2rem;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 
     .flex {
         justify-content:space-between;
         align-items: center;
+        gap: 1.5rem;
+        min-height: 60px;
     }
     .logo {
         font-weight: bold;
@@ -78,6 +83,7 @@ header {
     }
     .pc_menu {
         display: none;
+        font-weight: bold;
     }
     .mobil_menu {
         display: block;
@@ -86,13 +92,19 @@ header {
     }
 }
 main {
-    max-width: 500px;
+    max-width: $max-szel;
     margin: 0 auto;
     min-height: 70vh;
+
+    #fooldal {
+        min-height: 90vh;
+        background-color: rgb(2, 137, 255);
+    }
 }
 footer {
     color: $text_color;
     background-color: $m2_color;
+    line-height: 1.5rem;
 
     .flex {
         justify-content: center;
@@ -105,13 +117,27 @@ footer {
     }
     .up {
         padding: 3rem;
+        color: white;
         .flex {
             flex-direction: column;
+            gap: 5rem;
         }
         .creator {
             grid-column: 1/-1;
             grid-row: 1;
-            font-size: 1.5rem;
+            
+            img {
+                width: 150px;
+            }
+        }
+        .cim {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .social {
+            font-size: 2rem;
+            margin-top: 1rem;
         }
     }
     .down {
@@ -128,8 +154,20 @@ footer {
     html {
       background-color: rgb(218, 80, 195);
     }
+    header {
+        
+        .mobil_menu {
+            display: none;
+        }
+        .pc_menu {
+            display: block;
+        }
+    }
     footer .up .flex {
-            flex-direction: row;
-            justify-content:space-around
+        gap: 0;
+        text-align: left;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: flex-start;
     }
   }
