@@ -11,7 +11,7 @@ $text_color: rgb(24, 24, 24);
 $mobil: 600px;
 $pc: 800px;
 
-$max-szel: 800px;
+$max-szel: 1000px;
 
 
 // Alap
@@ -63,8 +63,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: $bg_color;
-    padding: .8rem 1.2rem;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
+    padding: .8rem 1rem;
     text-transform: uppercase;
     font-size: 1.2rem;
 
@@ -74,6 +74,7 @@ header {
     }
     .logo {
         font-weight: bold;
+        font-size: 1.4rem;
     }
     .pc_menu {
         display: none;
@@ -103,8 +104,10 @@ footer {
         color: rgba(255, 255, 255, 0.801);
     }
     .up {
-        flex-direction: column;
         padding: 3rem;
+        .flex {
+            flex-direction: column;
+        }
         .creator {
             grid-column: 1/-1;
             grid-row: 1;
@@ -125,10 +128,8 @@ footer {
     html {
       background-color: rgb(218, 80, 195);
     }
-    footer {
-        .flex {
+    footer .up .flex {
             flex-direction: row;
             justify-content:space-around
-        }
     }
   }
