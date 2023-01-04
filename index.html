@@ -10,27 +10,34 @@
     <link rel="icon" type="image/x-icon" href="./img_favicon/favicon.ico">
 </head>
 <body>
-<!-- header -->
-    <header>
-        <div class="flex">
-            <div class="logo">
-                <a href="#">DONUT PARADISE</a>
-            </div>
-            <div class="mobil_menu">Menu</div>
-            <nav class="pc_menu">
-                <ul class="flex">
-                    <li><a href="#fooldal">Főoldal</a></li>
-                    <li><a href="#fankok">Fánkok</a></li>
-                    <li><a href="#rolunk">Rólunk</a></li>
-                    <li><a href="#kapcsolat">Kapcsolat</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+<header>
+    <nav>
+        <ul class="flex">
+            <li><a href="#fooldal">Főoldal</a></li>
+            <li><a href="#fankok">Fánkok</a></li>
+            <li><a href="#rolunk">Rólunk</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+    </nav>
+</header>
 
 <!-- main -->
     <main>
         <div id="fooldal">
+            <div class="menu flex">
+                <div class="bal"><a href="#">DONUT <br> PARADISE</a></div>
+                <div class="jobb">
+                    <div class="pc">
+                        <a target="_blank" href="https://github.com/redcat-hu/Donut-Paradise"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-behance"></i></a>
+                        <a target="_blank" href="https://id.red-cat.hu/nn/"><i class="bi bi-person-vcard-fill"></i></a>
+                    </div>
+                    <div class="mobil">
+                        <i class="bi bi-list"></i>
+                    </div>
+                </div>
+            </div>
             <div class="szoveg">
                 <h1>Donut Paradise</h1>
                 <h2>Szentendre kedvenc amerikai kézműves fánkjai</h2>
@@ -48,25 +55,20 @@
         </div>
         <div id="kapcsolat" class="box flex">
             <div class="sendmail flex">
-                <i class="bi bi-envelope-open-fill"></i>
+                <a href="mailto:info@donutparadise.hu"><i class="bi bi-envelope-open-fill"></i></a>
                 <h2>Írj nekünk!</h2>
                 <form class="flex" name="form" onsubmit="return kuldES(this)">
-                    <label action="/action_page.php" for="nev">Név</label>
-                        <input type="text" id="nev" name="nev" placeholder="A neved..." required>
-
-                    <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Az email címed..." required>
-
-                    <label for="szoveg">Szöveg</label>
-                        <input type="text" id="szoveg" name="szoveg" placeholder="Írj valamit..." required>
+                        <input type="text" id="nev" name="nev" placeholder="Név" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="szoveg" name="szoveg" placeholder="Szöveg" required>
                     <input type="submit" value="Küldés">
                 </form>
             </div>
             <div class="elerhetoseg">
                 <h2>Kapcsolat</h2>
-                <ul>
-                    <li><i class="bi bi-telephone-fill"></i> +36-20-580-2061</li>
-                    <li><i class="bi bi-geo-alt-fill"></i> Szentendre, Kucsera Ferenc utca 4.</li>
+                <ul class="kapcs">
+                    <li><a href="tel:06205802061"><i class="bi bi-telephone-fill"></i> +36-20-580-2061</a></li>
+                    <li><a target="_blank" href="https://goo.gl/maps/ghMyDLNhZCngYvRg8"><i class="bi bi-geo-alt-fill"></i> Szentendre, Kucsera Ferenc utca 4.</a></li>
                     <li><a target="_blank" href="https://id.red-cat.hu/nn/"><i class="bi bi-person-vcard-fill"></i> Digitális Névjegykártya</a></li>
                 </ul>
                 <div class="social">
@@ -89,7 +91,7 @@
                 </div>
                 <div class="nyitvatartas">
                     <div class="cim">
-                        <i class="bi bi-clock-fill"></i> Nyitvatartás
+                        Nyitvatartás
                     </div>
                     <ul>
                         <li>H-P: 10:00 - 20:00</li>
@@ -116,10 +118,10 @@
         </div>
         <div class="down">
             <ul class="flex">
-                <li>Adatkezelési tájékoztató</li>
-                <li>Jogvédelem</li>
-                <li>Cookie</li>
-                <li>Oldaltérkép</li>
+                <li><a href="#">Adatkezelési tájékoztató</a></li>
+                <li><a href="#">Jogvédelem</a></li>
+                <li><a href="#">Cookie</a></li>
+                <li><a href="#">Oldaltérkép</a></li>
             </ul>
         </div>
     </footer>

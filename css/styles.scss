@@ -6,15 +6,17 @@
 $m_color: rgb(255, 118, 182);
 $m2_color: rgb(253, 69, 146);
 $bg_color: white;
-$text_color: rgb(24, 24, 24);
-$shadow_1: .5rem .5rem 1rem rgba(253, 69, 146, 0.171);
-$text_shadow_1: 0px 2px 5px rgba(54, 8, 30, 0.781);
+$text_color: rgb(90, 12, 46);
+$shadow_1: .2rem .2rem 1rem rgba(253, 69, 146, 0.171);
+$text_shadow_1: 2px 2px .5rem rgba(151, 55, 101, 0.678);
+$text_shadow_2: 0 0 2rem $bg_color;
 
 $mobil: 600px;
 $pc: 800px;
 
+$min-video: 1100px;
 $max-szel: 1500px;
-$min-szel:300px;
+$min-szel: 300px;
 
 
 // Alap
@@ -61,52 +63,65 @@ li {
     list-style: none;
 }
 .box {
-    min-height: 50vh;
+    min-height: 90vh;
+    max-height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-//
+/////////////////////////////////////
+.mobil {
+    display: block;
+}
+.pc {
+    display: none;
+}
 
 header {
-    position: fixed;
-    z-index: 50;
-    top: 0;
-    width: 100%;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
-    padding: .5rem 2rem;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    min-width: $min-szel;
+    nav {
+        padding-top: 10px;
+        position: fixed;
+        bottom: 1rem;
 
-    .flex {
-        justify-content:space-between;
-        align-items: center;
-        gap: 1.5rem;
-        min-height: 60px;
-    }
-    .logo {
-        font-weight: bold;
-        font-size: 1.4rem;
-    }
-    .pc_menu {
-        display: none;
-        font-weight: bold;
-    }
-    .mobil_menu {
-        display: block;
-        padding: .5rem;
-        border: 2px solid $m_color;
+        left: 50%;
+        transform: translate(-50%, 0);
+        //width: 100%;
+        z-index: 50;
+        
+        .flex {
+            gap: 0;
+        }
+        ul {
+            justify-content:center;
+            height: 50px;
+            text-transform: uppercase;
+            background-image: linear-gradient(rgba(255, 247, 252, 0.877), $bg_color);
+            font-weight: bold;
+            border-radius: 3rem;
+            padding: 0 5px;
+            width: 430px;
+            box-shadow: $shadow_1;
+        }
+        a {
+            padding: .8rem .9rem;
+        }
+        a:hover {
+            transition: background-color .25s, color .25s; 
+            border-radius: 20px;
+            background-color: $m_color;
+            color: $bg_color;
+            padding: .8rem .9rem;
+        }
     }
 }
+
 main {
     max-width: $max-szel;
     margin: 0 auto;
     min-height: 70vh;
 
     #fooldal {
-        margin-top: 60px;
         position: relative;
         height: clamp(500px, 90vh, 1000px);
         background-color: rgb(2, 137, 255);
@@ -114,11 +129,40 @@ main {
         background-position: center;
         background-size: cover;
 
+        .menu {
+            position: fixed;
+            top: 0;
+            justify-content:space-between;
+            padding: 0 1rem;
+            height: 70px;
+            z-index: 10;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.774);
+            
+            a {
+                color: $m2_color;
+            }
+
+            .bal {
+                text-align: left;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .jobb {
+                font-size: 1.8rem;
+
+                .mobil {
+                    font-size: 3rem;
+                }
+            }
+        }
         .szoveg {
             background-image: linear-gradient(rgba(255, 255, 255, 0), $bg_color);
             color: $text_color;
+            text-shadow: $text_shadow_2;
             position: absolute;
             width: 100%;
+            height: 50%;
             left: 0;
             bottom: 0;
             padding: 3rem 5rem;
@@ -153,7 +197,7 @@ main {
     #kapcsolat {
         background-image: linear-gradient($m_color, $m2_color);
         background-image: url(../img/fank1.webp);
-        padding: 2rem;
+        padding: 5rem 2rem;
         margin: 0;
         justify-content: space-around;
         background-position: center;
@@ -164,7 +208,7 @@ main {
             flex-direction: column;
             background-color: $bg_color;
             color: $m2_color;
-            padding: 2rem;
+            padding: 3rem;
             border-radius: 1rem;
             box-shadow: $shadow_1;
         }
@@ -176,24 +220,35 @@ main {
                 flex-direction: column;
                 gap: 1rem;
             }
-            label {
-                font-size: 1.3rem;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
             input {
+                border: 2px solid $m_color;
                 border-radius: .5rem;
                 padding: 1rem;
-                border-color: whitesmoke;
             }
             input:last-child {
                 background-color: $m2_color;
                 color: $bg_color;
                 font-size: 1.4rem;
-                padding: 1rem;
+                padding: .5rem 1rem;
                 border: 0;
                 border-radius: 2rem;
             }
+        }
+        .elerhetoseg {
+            font-weight: bold;
+            line-height: 1.5rem;
+            h2 {
+                margin-bottom: 1rem;
+            }
+            .kapcs {
+                font-size: 1.3rem;
+            }
+            .social {
+                margin-top: 1rem;
+                i {
+                    font-size: 2.5rem;
+                }
+            }  
         }
     }
 }
@@ -237,16 +292,26 @@ footer {
         }
     }
     .down {
-        padding: 2rem;
+        padding: 2rem 0 20vh 2rem;
         background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 223, 248));
         color: $m_color;
         font-weight: bold;
+
+        a {
+            color: $m2_color;
+        }
+        a:hover {
+            color: $m_color;
+        }
     }
 }
 
 
 // Media //////////////////////////////////
 @media only screen and (min-width: $pc) {
+    .mobil {display: none;}
+    .pc {display: block;}
+
     html {
       background-color: rgb(218, 80, 195);
     }
@@ -255,14 +320,26 @@ footer {
         .mobil_menu {
             display: none;
         }
-        .pc_menu {
+        nav {
+            top: 0;
+            bottom: auto;
             display: block;
+
+            .flex{
+                gap: 5px;
+            }
         }
     }
     main {
         #fooldal {
-            video {
-                display: block;
+            .menu {
+                text-shadow: $text_shadow_1;
+                background-color: rgba(255, 255, 255, 0);
+                position: absolute;
+
+                a {
+                    color: white;
+                }
             }
         }
     }
@@ -273,4 +350,14 @@ footer {
         justify-content:space-around;
         align-items: flex-start;
     }
+  }
+
+  @media only screen and (min-width: $min-video) {
+  main {
+    #fooldal {
+        video {
+            display: block;
+            }
+    }
+  }
   }
