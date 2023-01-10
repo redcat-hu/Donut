@@ -16,7 +16,7 @@ $pc: 800px;
 
 $min-video: 1100px;
 $max-szel: 1500px;
-$min-szel: 300px;
+$min-szel: 330px;
 
 
 // Alap
@@ -33,7 +33,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    min-height: $min-szel;
+    min-width: $min-szel;
 }
 
 // Sablon
@@ -80,38 +80,33 @@ li {
 
 header {
     nav {
-        padding-top: 10px;
         position: fixed;
-        bottom: 1rem;
-
-        left: 50%;
-        transform: translate(-50%, 0);
-        //width: 100%;
+        bottom: 0;
         z-index: 50;
         
         .flex {
             gap: 0;
         }
         ul {
-            justify-content:center;
-            height: 50px;
+            justify-content:space-around;
             text-transform: uppercase;
             background-image: linear-gradient(rgba(255, 247, 252, 0.877), $bg_color);
             font-weight: bold;
-            border-radius: 3rem;
-            padding: 0 5px;
-            width: 430px;
+            width: 100vw;
             box-shadow: $shadow_1;
+            padding: 5px;
+        }
+        i {
+            font-size: 2.5rem;
         }
         a {
-            padding: .8rem .9rem;
+            padding: 10px;
+            display: block;
+            border-radius: 1rem;
         }
         a:hover {
-            transition: background-color .25s, color .25s; 
-            border-radius: 20px;
             background-color: $m_color;
             color: $bg_color;
-            padding: .8rem .9rem;
         }
     }
 }
@@ -132,7 +127,7 @@ main {
         .menu {
             position: fixed;
             top: 0;
-            justify-content:space-between;
+            justify-content: space-between;
             padding: 0 1rem;
             height: 70px;
             z-index: 10;
@@ -193,6 +188,13 @@ main {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
     }
     #kapcsolat {
         background-image: linear-gradient($m_color, $m2_color);
@@ -321,9 +323,21 @@ footer {
             display: none;
         }
         nav {
-            top: 0;
+            top: 10px;
             bottom: auto;
             display: block;
+            left: 50%;
+            transform: translate(-50%, 0);
+            
+            ul {
+                height: 50px;
+                width: 450px;
+                border-radius: 3rem;
+                padding: 2px;
+            }
+            a {
+                border-radius: 2rem;
+            }
 
             .flex{
                 gap: 5px;
